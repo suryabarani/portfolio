@@ -1,0 +1,63 @@
+.main-Home{
+    background-color: #ffefb3;
+    height: 100vh;
+}
+
+.name{
+  color: #013e37;
+}
+.myimg{
+    width: 400px;
+    height: 400px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+.left{
+    animation: scroll 2s ease-in-out forwards;
+   
+}
+@keyframes scroll{
+    from {
+        scale: 0.3;
+        opacity: 0;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+.right{
+    animation: scroll 2s ease-in-out forwards;
+   
+}
+@keyframes scroll{
+    from {
+        scale: 0.3;
+        opacity: 0;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+.total{
+    padding-top: 130px ;
+}
+
+.title{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.twoside{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 0 30px 0;
+} 
+
+.right{
+    padding-top: 7%;
+}
+

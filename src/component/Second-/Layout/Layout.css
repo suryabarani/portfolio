@@ -1,0 +1,13 @@
+.main-container{
+    width: 100%;
+    height: 100%;
+}
+
+section.main-section{
+    position: relative;
+    width: calc(100% - var(--sidebar-width));
+    margin-left: var(--sidebar-width)!important;
+    height: 100%;
+    min-height: 100vh;
+    transition: margin-left .3s ease, width .3s ease;
+}
