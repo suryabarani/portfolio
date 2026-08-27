@@ -1,4 +1,5 @@
-.main{width: var(--sidebar-width);
+.main{
+    width: var(--sidebar-width);
     height: 100%;
     background-color:#013e37;
     color:#ffefb3;
@@ -7,6 +8,7 @@
     padding: 80px 0 ;
     position: fixed;
     transition: width .3s ease;
+    z-index: 999;
 }
 .navs{
     padding: 0;
@@ -20,31 +22,25 @@
     padding: 10px;
     border-radius: 10px;
     border: #ffefb3 solid 0.1rem;
-   }
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .btn{
     color:#ffefb3;
-  margin: 20px 10px;
+    margin: 20px 10px;
+    background: transparent;
+    border: none;
 }
 
-.nav-label{
-    max-width: 0;
-    opacity: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    margin-left: 0;
-    position: fixed;
-}
-
-.main.open{
-    z-index: 999;
-}
 .lis{
     display: flex;
     align-items: center;
     text-align: center;
-     color:#ffefb3;
+    color:#ffefb3;
     position: static;
-    z-index: 9999;
 }
 .openone{
     position: relative;
@@ -55,11 +51,71 @@
     margin-top: 20px;
 }
 
-
 .a{
-     display: flex;
+    display: flex;
     justify-content: center;
     text-decoration: none; 
 }
 
+/* ---------- TOP NAVBAR (mobile only) ---------- */
+.topnav{
+    display: none;               /* hidden on desktop */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #013e37;
+    color: #ffefb3;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+.topnav-toggle{
+    background: transparent;
+    border: #ffefb3 solid 0.1rem;
+    border-radius: 8px;
+    padding: 6px;
+    color: #ffefb3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.topnav-title{
+    font-weight: 600;
+}
 
+.topnav-dropdown{
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #013e37;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    z-index: 999;
+}
+.topnav-dropdown.open{
+    max-height: 500px; /* enough to fit all items */
+}
+.topnav-dropdown .nav{
+    margin: 0;
+}
+.topnav-dropdown .navs{
+    padding: 12px 16px;
+    border-top: 1px solid rgba(255,239,179,0.15);
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px){
+    .main{
+        display: none;   /* hide sidebar entirely on mobile */
+    }
+    .topnav{
+        display: flex;
+    }
+}

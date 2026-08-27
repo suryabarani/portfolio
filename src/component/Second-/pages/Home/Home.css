@@ -1,36 +1,32 @@
 .main-Home{
     background-color: #ffefb3;
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .name{
   color: #013e37;
 }
+
 .myimg{
     width: 400px;
     height: 400px;
+    max-width: 80vw;
+    max-height: 80vw;
     border-radius: 100px;
     object-fit: cover;
 }
 
 .left{
     animation: scroll 2s ease-in-out forwards;
-   
 }
-@keyframes scroll{
-    from {
-        scale: 0.3;
-        opacity: 0;
-    }
-    to{
-        scale: 1;
-        opacity: 1;
-    }
-}
+
 .right{
     animation: scroll 2s ease-in-out forwards;
-   
+    padding-top: 7%;
 }
+
 @keyframes scroll{
     from {
         scale: 0.3;
@@ -41,8 +37,10 @@
         opacity: 1;
     }
 }
+
 .total{
-    padding-top: 130px ;
+    padding-top: 130px;
+    width: 100%;
 }
 
 .title{
@@ -53,11 +51,46 @@
 
 .twoside{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 0 0 30px 0;
-} 
-
-.right{
-    padding-top: 7%;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px 30px 20px;
 }
 
+/* Tablet */
+@media (max-width: 900px){
+    .total{
+        padding-top: 90px;
+    }
+    .myimg{
+        width: 300px;
+        height: 300px;
+        border-radius: 80px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px){
+    .main-Home{
+        height: auto;
+        min-height: 100vh;
+    }
+    .twoside{
+        flex-direction: column-reverse; /* image below or above text, your call */
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    .right{
+        padding-top: 0;
+    }
+    .myimg{
+        width: 220px;
+        height: 220px;
+        border-radius: 60px;
+    }
+    .total{
+        padding-top: 60px;
+    }
+}
