@@ -1,0 +1,30 @@
+.project{
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+  font-family: cursive;
+  display: block;
+  position: relative;
+}
+.neosmile{
+  border-radius: 20px;
+}
+.neosmile:hover{
+  transform: scale(1.1);
+  box-shadow: 10px 10px 5px rgb(0, 0, 0,0.3);
+
+}
+.project-git{
+  width:30px;
+  height: 30px;
+  cursor: pointer;
+}
+.project-git:hover{
+  transform: scale(1.1);
+}
+.next-page{
+  display: flex;
+  align-items: center;
+
+}

@@ -1,0 +1,64 @@
+/* --- Global overflow fix --- */
+html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Catches fixed/absolute positioned background elements 
+   that ignore body's overflow-x: hidden */
+.bg-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bg-wrapper canvas,
+.bg-wrapper svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.header-wrapper,
+.main-info {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* --- Typing animation --- */
+.fullstack {
+  font-size: 35px;
+  font-weight: 100;
+  overflow: hidden;
+  border-right: .15em solid rgb(0, 0, 0);
+  white-space: nowrap;
+  margin: 20px auto;
+  letter-spacing: .15em;
+  max-width: 100%;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(0, 0, 0); }
+}
